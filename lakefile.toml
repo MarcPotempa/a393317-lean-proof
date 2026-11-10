@@ -1,0 +1,33 @@
+name = "a393317"
+defaultTargets = ["Solution", "ModelCheck", "Axioms"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.27.0"
+
+# The proof (model, lemmas, certificates, main theorems).
+[[lean_lib]]
+name = "A393317"
+globs = ["A393317.+"]
+
+# The statements alone (with `sorry`), for Comparator.
+[[lean_lib]]
+name = "Challenge"
+
+# Entry point for Comparator: imports the proof.
+[[lean_lib]]
+name = "Solution"
+
+# The model against OEIS data.
+[[lean_lib]]
+name = "ModelCheck"
+
+# Prints the axioms the main theorems depend on.
+[[lean_lib]]
+name = "Axioms"
